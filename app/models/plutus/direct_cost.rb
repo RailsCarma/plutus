@@ -7,7 +7,7 @@ module Plutus
   # @see http://en.wikipedia.org/wiki/Expense Expenses
   #
   # @author Michael Bulat
-  class DirectCosts < Expense
+  class DirectCost < Expense
 
     self.normal_credit_balance = false
 
