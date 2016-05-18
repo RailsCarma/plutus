@@ -40,7 +40,10 @@ module Plutus
     scope :active, -> {where(status: "Active").order("name ASC")}
     scope :inactive, -> {where(status: "Inactive").order("name ASC")}
     validates_presence_of :type
-
+    
+    validates :code, presence: true, uniqueness: true
+    validates :name, presence: true, uniqueness: true
+    
     if Plutus.enable_tenancy
       include Plutus::Tenancy
     else
